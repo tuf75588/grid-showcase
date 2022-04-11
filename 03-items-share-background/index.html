@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="item-1">
+        <span>Lighting</span>
+        <span class="shop"></span>
+        <div class="overlay"></div>
+      </div>
+      <div class="alt">
+        <span>Art & Decor</span>
+        <span class="shop"></span>
+        <div class="overlay"></div>
+      </div>
+      <div class="item-1">
+        <span>Storage</span>
+        <span class="shop"></span>
+        <div class="overlay"></div>
+      </div>
+      <div class="item-1">
+        <span>Flooring</span>
+        <span class="shop"></span>
+        <div class="overlay"></div>
+      </div>
+      <div class="item-1">
+        <span>CSS Grid Tricks</span>
+        <span class="shop"></span>
+        <div class="overlay"></div>
+      </div>
+      <div class="alt">
+        <span>Furniture</span>
+        <span class="shop"></span>
+        <div class="overlay"></div>
+      </div>
+      <div class="alt">
+        <span>Entertainment</span>
+        <span class="shop"></span>
+        <div class="overlay"></div>
+      </div>
+      <div class="">
+        <span>Accessories</span>
+        <span class="shop"></span>
+        <div class="overlay"></div>
+      </div>
+      <div class="alt">
+        <span>Tables</span>
+        <span class="shop"></span>
+        <div class="overlay"></div>
+      </div>
+      <div class="item-1 alt">
+        <span>Rugs</span>
+        <span class="shop"></span>
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <script>
+      const shopText = document.querySelectorAll('.shop');
+
+      for (let i = 0; i < shopText.length; i++) {
+        shopText[i].innerHTML = 'Shop';
+      }
+    </script>
+  </body>
+</html>
