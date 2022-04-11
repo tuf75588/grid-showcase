@@ -1,0 +1,10 @@
+.grid-container {
+  text-align: center;
+  margin: 3rem;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.grid-item {
+  background: rebeccapurple;
+}
