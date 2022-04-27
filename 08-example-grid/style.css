@@ -17,8 +17,9 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 150px 150px 150px;
-  grid-template-rows: 150px 150px;
+  grid-template-columns: repeat(3, 1fr);
+  width: 800px;
+  grid-template-rows: repeat(2,150px);
   grid-gap: 1rem;
 }
 .item {
@@ -28,4 +29,11 @@ body {
   color: #fff;
   border-radius: 4px;
   border: 6px solid #171717;
+  text-align: center;
+}
+
+
+.item1 {
+  grid-row: 3/4;
+  grid-column: 1/3;
 }
