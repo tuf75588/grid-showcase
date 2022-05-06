@@ -1,7 +1,7 @@
 html {
   max-block-size: 100%;
   max-inline-size: 100%;
-
+  font-size: 100%;
 }
 
 body {
@@ -16,15 +16,21 @@ body {
   background: purple;
   display: grid;
   margin-top: 20rem;
-  width: 45%;
+  max-width:500px;
   height: 50%;
   margin-left: auto;
   margin-right: auto;
   grid-template-rows: auto 1fr 1fr 1fr 1fr;
   
 }
+.calculator-container > .display {
+  text-align: right;
+  font-size: 2rem;
+  background-color: lightgrey;
+
+}
 .row {
-  background-color: yellow;
-  border: 1px solid black;
   padding: 1rem;
+  outline: 2px solid black;
+  background-color: slategrey;
 }
