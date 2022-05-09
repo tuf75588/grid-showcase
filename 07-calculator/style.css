@@ -51,7 +51,7 @@ body {
   grid-column: 1 /3;
 }
 
-.item:hover {
+.item:not(.display):hover {
   cursor: pointer;
   background-image: linear-gradient(
     130deg,
