@@ -1,8 +1,27 @@
-console.log('conntected');
-const items = Array.from(document.querySelectorAll('.item'));
+const display = document.querySelector('.display');
+const screen = {
+  leftPart: '',
+  operation: '',
+  rightPart: '',
+};
 
+const operations = {
+  add: (a, b) => a + b,
+  subtract: (a, b) => a - b,
+  multiply: (a, b) => a * b,
+  divide: (a, b) => a / b,
+  negative: (a) => a * -1,
+};
 
-
-function inputNumbers(element) {
-  console.log(element);
+function inputNumbers() {
+  const buttons = document.querySelectorAll('.item button');
+  for (const button of buttons) {
+    button.addEventListener('click', ({ target: { innerText } }) => {
+      const val = innerText;
+      leftPart = val;
+      display.textContent += leftPart;
+    });
+  }
 }
+
+inputNumbers();
