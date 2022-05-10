@@ -19,14 +19,13 @@ body {
   width: 400px;
   padding: 1rem;
   grid-template-rows: repeat(6, 80px);
-  gap: 5px;
+  gap: 10px;
   place-content: center;
 }
 .item {
   background-color: #1eaafc;
   border: 2px solid black;
   align-items: center;
-  padding: 10px;
   justify-items: center;
   background-image: linear-gradient(
     130deg,
@@ -42,22 +41,37 @@ body {
 
 .display {
   grid-column: 1/5;
-  padding-top: 2rem;
+  padding-top: 1.1rem;
   padding-right: 2rem;
   display: inline-block;
   text-align: right;
+  font-size: 1.8rem;
 }
 .zero {
   grid-column: 1 /3;
 }
 
 .item:not(.display):hover {
-  cursor: pointer;
+
   background-image: linear-gradient(
     130deg,
     mistyrose,
     #1eaafc 70%,
     #3edfd7 100%
   );
+ 
+}
+
+button {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: white;
+  font-size: 1.1rem;
+}
+button:hover {
   color: #000;
 }
