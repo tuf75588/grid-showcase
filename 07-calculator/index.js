@@ -17,9 +17,10 @@ function inputNumbers() {
   const buttons = document.querySelectorAll('.item button');
   for (const button of buttons) {
     button.addEventListener('click', ({ target: { innerText } }) => {
-      const val = innerText;
-      leftPart = val;
-      display.textContent += leftPart;
+      const val = innerText; // the number we click
+      screen.leftPart += val;
+      // is the first press a .?
+      display.textContent = screen.leftPart
     });
   }
 }
