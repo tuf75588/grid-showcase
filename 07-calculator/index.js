@@ -21,6 +21,10 @@ function inputNumbers() {
       if (val === 'AC') {
        return clearDisplay()
       }
+
+      if (val === '.') {
+        return inputDot();
+      }
       screen.displayValue = screen.displayValue ===  '0' ? val : screen.displayValue + val;
       display.textContent = screen.displayValue
     });
@@ -29,6 +33,11 @@ function inputNumbers() {
 
 inputNumbers();
 
+
+function inputDot() {
+  screen.displayValue += '.';
+  display.textContent = screen.displayValue;
+}
 
 function clearDisplay() {
   screen.displayValue = '';
