@@ -1,6 +1,6 @@
 const display = document.querySelector('.display');
 const screen = {
-  leftPart: '',
+  displayValue: '',
   operation: '',
   rightPart: '',
 };
@@ -17,15 +17,12 @@ function inputNumbers() {
   const buttons = document.querySelectorAll('.item button');
   for (const button of buttons) {
     button.addEventListener('click', ({ target: { innerText } }) => {
-      const val = innerText; // the number we click
-      console.log(val)
-      // check if we want to clear the screen
+      const val = innerText;
       if (val === 'AC') {
        return clearDisplay()
       }
-      screen.leftPart += val;
-      // is the first press a .?
-      display.textContent = screen.leftPart
+      screen.displayValue = screen.displayValue ===  '0' ? val : screen.displayValue + val;
+      display.textContent = screen.displayValue
     });
   }
 }
@@ -34,7 +31,7 @@ inputNumbers();
 
 
 function clearDisplay() {
-  screen.leftPart = '';
+  screen.displayValue = '';
   screen.rightPart = '';
   screen.operation = '';
   display.textContent = 0
