@@ -17,6 +17,7 @@ function inputNumbers() {
   const buttons = document.querySelectorAll('.item button');
   for (const button of buttons) {
     button.addEventListener('click', ({ target: { innerText } }) => {
+      // this should eventually be a switch statement
       const val = innerText;
       if (val === 'AC') {
        return clearDisplay()
@@ -25,14 +26,29 @@ function inputNumbers() {
       if (val === '.') {
         return inputDot();
       }
+      if (val === '+/-') {
+        display.textContent = toggleSign();
+
+      } else {
       screen.displayValue = screen.displayValue ===  '0' ? val : screen.displayValue + val;
       display.textContent = screen.displayValue
+      }
     });
   }
 }
 
+
+
+
+
 inputNumbers();
 
+/* operation functions */
+function toggleSign() {
+  screen.displayValue = screen.displayValue * -1;
+  return screen.displayValue;
+
+}
 
 function inputDot() {
   screen.displayValue += '.';
