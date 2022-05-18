@@ -7,11 +7,11 @@ const screen = {
 };
 
 const operations = {
-  add: (a, b) => a + b,
-  subtract: (a, b) => a - b,
-  multiply: (a, b) => a * b,
-  divide: (a, b) => a / b,
-  negative: (a) => a * -1,
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  '*': (a, b) => a * b,
+  '/': (a, b) => a / b,
+  '=': (preValue, nextValue) => nextValue
 };
 
 function inputNumbers() {
@@ -27,6 +27,10 @@ function inputNumbers() {
       } else if (innerText === '+/-') {
         display.textContent = toggleSign();
       }
+      else if (innerText === '*' ) {
+        screen.waitingForOperand = false;
+        performOperation('*')
+      }
       display.textContent = addDigit(innerText);
     });
   }
@@ -35,6 +39,11 @@ function inputNumbers() {
 function addDigit(digit) {
   screen.displayValue = screen.displayValue === '0' ? digit : screen.displayValue + digit;
   return screen.displayValue;
+}
+
+function performOperation(operator) {
+  const computedVal = operations[operator](screen.displayValue,2);
+  console.log(computedVal);
 }
 
 
