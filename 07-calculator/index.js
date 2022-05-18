@@ -2,7 +2,8 @@ const display = document.querySelector('.display');
 const screen = {
   displayValue: '',
   operation: '',
-  rightPart: '',
+  value: '',
+  waitingForOperand: false,
 };
 
 const operations = {
@@ -18,36 +19,29 @@ function inputNumbers() {
   for (const button of buttons) {
     button.addEventListener('click', ({ target: { innerText } }) => {
       // this should eventually be a switch statement
-      const val = innerText;
-      if (val === 'AC') {
-       return clearDisplay()
-      }
-
-      if (val === '.') {
+      // const val = innerText;
+      if (innerText === 'AC') {
+        return clearDisplay();
+      } else if (innerText === '.') {
         return inputDot();
-      }
-      if (val === '+/-') {
+      } else if (innerText === '+/-') {
         display.textContent = toggleSign();
-
-      } else {
-      screen.displayValue = screen.displayValue ===  '0' ? val : screen.displayValue + val;
-      display.textContent = screen.displayValue
       }
+      display.textContent = addDigit(innerText);
     });
   }
 }
 
+function addDigit(digit) {
+  screen.displayValue = screen.displayValue === '0' ? digit : screen.displayValue + digit;
+  return screen.displayValue;
+}
 
-
-
-
-inputNumbers();
 
 /* operation functions */
 function toggleSign() {
   screen.displayValue = screen.displayValue * -1;
   return screen.displayValue;
-
 }
 
 function inputDot() {
@@ -59,5 +53,7 @@ function clearDisplay() {
   screen.displayValue = '';
   screen.rightPart = '';
   screen.operation = '';
-  display.textContent = 0
+  display.textContent = 0;
 }
+
+inputNumbers();
