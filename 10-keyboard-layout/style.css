@@ -22,8 +22,8 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(14, 50px);
-  grid-template-rows: repeat(5, 50px);
+  grid-template-columns: repeat(17, 50px);
+  grid-template-rows: repeat(6, 50px);
   gap: 2px;
 }
 
@@ -32,21 +32,21 @@ body {
 }
 
 .spacebar {
-  grid-column: 5 / 11;
+  grid-column: 6 / 13;
   background-color: lightgrey;
 }
 
 .alt {
-  grid-column: 2 / 3;
+  grid-column: 3 / 4;
   background-color: lightgray;
 }
 
 .meta {
-  grid-column: 3 / 5;
+  grid-column: 4 / 6;
   background-color: lightgray;
 }
 .meta-r {
-  grid-column: 11 / 13;
+  grid-column: 13 / 15;
   background-color: lightgray;  
 }
 .alt-r {
@@ -55,9 +55,10 @@ body {
 
 .blocker {
   background-color: whitesmoke;
-  margin-left: -5px
+  grid-column:  16 / 18;
 }
 .blocker-left {
-  margin-right: -5px;
   background-color: whitesmoke;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
